@@ -3,7 +3,7 @@
 import os
 import sys
 
-from wikisim import wiki
+from wiki2vec import wiki
 
 items_file = sys.argv[1]
 headers_file = sys.argv[2]

@@ -15,7 +15,7 @@ import sys
 import os
 from collections import Counter
 
-from wikisim import extract
+from wiki2vec import extract
 
 wiki_path = sys.argv[1]
 out_dir = sys.argv[2]

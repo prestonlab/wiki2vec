@@ -3,7 +3,7 @@
 import os
 import sys
 
-from wikisim import word2vec
+from wiki2vec import word2vec
 
 items_file = sys.argv[1]
 vectors_file = sys.argv[2]

@@ -10,7 +10,7 @@ from nltk.data import load
 from nltk.corpus import wordnet
 from nltk.compat import python_2_unicode_compatible
 import json, ast
-from wikisim import lemma
+from wiki2vec import lemma
 
 def extract_entity_names(t):
     """
