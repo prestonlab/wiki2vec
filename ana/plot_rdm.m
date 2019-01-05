@@ -48,6 +48,8 @@ if isempty(opt.ind)
     opt.ind = 1:length(rdm);
 end
 
+colormap('viridis');
+
 % image
 if opt.issym
     cmin = prctile(squareform(rdm(opt.ind,opt.ind)), opt.prctile_range(1));
