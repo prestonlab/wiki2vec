@@ -7,3 +7,4 @@ It makes use of the following external packages, included here for convenience:
 
 word2vec
 wikiextractor
+Colormaps from MatPlotLib
