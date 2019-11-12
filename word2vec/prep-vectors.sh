@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ $# -lt 3 ]; then
+if [ $# -lt 2 ]; then
     echo "Usage:   prep-vectors.sh binfile vecfile"
     echo "Example: prep-vectors.sh GoogleNews-vectors-negative300.bin vectors.txt"
     echo
