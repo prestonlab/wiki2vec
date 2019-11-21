@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import os
 import sys
 
 from wiki2vec import wiki
@@ -20,6 +19,7 @@ with open(items_file, 'r') as f:
 with open(lookup_file, 'w') as f:
     for item in items:
         if item not in wiki.keys():
-            raise  ValueError('{} not found in Wikipedia page titles'.format(item))
+            raise ValueError(
+                '{} not found in Wikipedia page titles'.format(item))
         pagefile = wiki[item]
         f.write('{}={}\n'.format(item, pagefile))

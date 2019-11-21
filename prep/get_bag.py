@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-#get_bag.py   Creates bags of words for stimuli. 
+# get_bag.py   Creates bags of words for stimuli.
 #
 #  Creates a bag of words for each item and saves bag of 
 #  words as text file with the same name as the cleaned 

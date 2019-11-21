@@ -18,6 +18,6 @@ fi
 for t in female male manmade natural; do
     items=$(find "$stim_dir/$t" -type f -name "*.jpg" | tr '\n' ' ')
     for i in $items; do
-	echo $(basename $i .jpg) | sed 's/_/ /g' >> "$output_file"
+	      echo $(basename "$i" .jpg) | sed 's/_/ /g' >> "$output_file"
     done
 done

@@ -30,7 +30,7 @@ check_item_map.py "$map_file"
 mkdir -p "$output_dir"
 
 cp "$map_file" "$output_dir"/items_map.txt
-cd "$output_dir"
+cd "$output_dir" || exit 1
 
 # remove any existing output files
 rm -f items_{orig,wiki,lookup}.txt

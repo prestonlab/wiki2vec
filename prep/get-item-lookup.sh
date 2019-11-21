@@ -27,13 +27,13 @@ if [ -f "$lookup_file" ]; then
     rm "$lookup_file"
 fi
 
-while read item; do
+while read -r item; do
     if entry=$(grep -n -m 1 "^$item$" "$titles_file"); then
-	lineno=$(echo "$entry" | cut -d ':' -f 1)
-	file=$(sed "${lineno}q;d" "$headers_file" | cut -d ':' -f 1)
-	echo "$item"
-	echo "$item=$file" >> "$lookup_file"
+	      lineno=$(echo "$entry" | cut -d ':' -f 1)
+	      file=$(sed "${lineno}q;d" "$headers_file" | cut -d ':' -f 1)
+	      echo "$item"
+	      echo "$item=$file" >> "$lookup_file"
     else
-	echo "Warning: no Wikipedia page found for $item."
+	      echo "Warning: no Wikipedia page found for $item."
     fi
 done < "$items_file"

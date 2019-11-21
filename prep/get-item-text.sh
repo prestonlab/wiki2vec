@@ -28,7 +28,7 @@ if [ ! -d "$output_dir" ]; then
     mkdir -p "$output_dir"
 fi
 
-while read item; do
+while read -r item; do
     # name and file for this item
     name=$(echo "$item" | cut -d = -f 1)
     file=$(echo "$item" | cut -d = -f 2)
@@ -37,15 +37,15 @@ while read item; do
     start="title=\"$name\">"
     finish="</doc>"
     if text=$(sed -n "\_${start}_,\_${finish}_p" "$file" | sed 1d | sed '$d'); then
-	# original name(s) (the same page may be used for multiple
-	# items)
-	orig_names=$(grep "=${name}$" "$map_file" | cut -d = -f 1)
-	while read orig; do
-    	    filename=$(echo $orig | sed 's/ /_/g')
-    	    echo "$name -> $orig"
-    	    echo $text > "$output_dir/${filename}.txt"
-	done <<< "$orig_names"
+	      # original name(s) (the same page may be used for multiple
+	      # items)
+	      orig_names=$(grep "=${name}$" "$map_file" | cut -d = -f 1)
+	      while read -r orig; do
+    	      filename=$(echo "$orig" | sed 's/ /_/g')
+    	      echo "$name -> $orig"
+    	      echo "$text" > "$output_dir/${filename}.txt"
+	      done <<< "$orig_names"
     else
-    	echo "Warning: page not found for $name in $file."
+    	  echo "Warning: page not found for $name in $file."
     fi
 done < "$lookup_file"
