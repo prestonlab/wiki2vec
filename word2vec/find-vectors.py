@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-import os
 import sys
 
 from wiki2vec import word2vec
@@ -20,5 +19,5 @@ with open(out_file, 'w') as f:
     for i, item in enumerate(items):
         f.write('{} '.format(item))
         for j in range(vectors.shape[1]):
-            f.write('{:.6f} '.format(vectors[i,j]))
+            f.write('{:.6f} '.format(vectors[i, j]))
         f.write('\n')
