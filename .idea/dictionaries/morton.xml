@@ -1,6 +1,11 @@
 <component name="ProjectDictionaryState">
   <dictionary name="morton">
     <words>
+      <w>lemmatize</w>
+      <w>lemmatized</w>
+      <w>lemmatizer</w>
+      <w>nltk</w>
+      <w>tokenizers</w>
       <w>wikipedia</w>
     </words>
   </dictionary>
