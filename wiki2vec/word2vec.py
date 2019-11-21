@@ -2,6 +2,7 @@
 
 import numpy as np
 
+
 def find_vectors(items, vectors_file):
     """Find terms in a vectors file.
 
@@ -29,9 +30,10 @@ def find_vectors(items, vectors_file):
     vectors = vf.get_item_list(items)
     return vectors
 
+
 def article_vector(count_file, vectors_file):
     """Calculate a vector weighted by term count."""
-    
+
     # read items, and term counts to use as weights
     with open(count_file, 'r') as f:
         weights = []
@@ -43,6 +45,7 @@ def article_vector(count_file, vectors_file):
 
     vf = VectorFile(vectors_file)
     vector = vf.weighted_vector(items, weights)
+
 
 class VectorFile:
     """Class for reading data from large files with vector data."""
@@ -65,10 +68,10 @@ class VectorFile:
                 offset += len(line)
                 self.n_term += 1
             self.n_dim = len(line.split()) - 1
-            
+
     def get_item(self, item):
         """Load the vector for an item."""
-        
+
         # check if it's in the vectors file
         if item not in self.term_offset.keys():
             return None

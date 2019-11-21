@@ -1,13 +1,10 @@
-#lemma.py   Finds lemma of nouns and verbs
+"""Find lemma of nouns and verbs."""
 
 from __future__ import unicode_literals
-import sys
 
 import nltk
-from nltk.corpus.reader.wordnet import NOUN
-from nltk.corpus.reader.wordnet import VERB
 from nltk.corpus import wordnet
-from nltk.compat import python_2_unicode_compatible
+
 
 class Splitter(object):
     def __init__(self):
@@ -18,26 +15,30 @@ class Splitter(object):
         """
         input format: a paragraph of text
         output format: a list of lists of words.
-            e.g.: [['this', 'is', 'a', 'sentence'], ['this', 'is', 'another', 'one']]
+            e.g.: [['this', 'is', 'a', 'sentence'],
+                   ['this', 'is', 'another', 'one']]
         """
         sentences = self.nltk_splitter.tokenize(text)
-        tokenized_sentences = [self.nltk_tokenizer.tokenize(sent) for sent in sentences]
+        tokenized_sentences = [self.nltk_tokenizer.tokenize(sent) for sent in
+                               sentences]
         return tokenized_sentences
 
 
 class POSTagger(object):
     def __init__(self):
         pass
-        
+
     def pos_tag(self, sentences):
         """
         input format: list of lists of words
-            e.g.: [['this', 'is', 'a', 'sentence'], ['this', 'is', 'another', 'one']]
+            e.g.: [['this', 'is', 'a', 'sentence'],
+                   ['this', 'is', 'another', 'one']]
         output format:
         
         """
-        nounverbpostags = ['NN', 'NNP', 'NNPS', 'NNS', 'VB', 'VBD', 'VBG', 'VBN', 'VBP', 'VBZ']
-        nouns_and_verbs=[] 
+        nounverbpostags = ['NN', 'NNP', 'NNPS', 'NNS', 'VB', 'VBD', 'VBG',
+                           'VBN', 'VBP', 'VBZ']
+        nouns_and_verbs = []
         for sentence in sentences:
             pos = nltk.pos_tag(sentence)
             # return pos
