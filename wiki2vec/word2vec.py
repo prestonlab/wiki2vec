@@ -67,7 +67,10 @@ class VectorFile:
 
                 offset += len(line)
                 self.n_term += 1
-            self.n_dim = len(line.split()) - 1
+            if line.find('\b'):
+                ind = line.find('\b')
+                line = line[:ind]
+            self.n_dim = len(line.strip().split()) - 1
 
     def get_item(self, item):
         """Load the vector for an item."""
@@ -96,6 +99,12 @@ class VectorFile:
                 if item in self.term_offset.keys():
                     f.seek(self.term_offset[item])
                     vec_line = f.readline()
+
+                    # remove ending backspace characters if present
+                    if vec_line.find('\b'):
+                        ind = vec_line.find('\b')
+                        vec_line = vec_line[:ind]
+
                     vectors[i] = np.array([float(x) for x in
                                            vec_line.split()[1:]])
         return vectors
