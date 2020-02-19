@@ -16,6 +16,7 @@ def plot_dsm(dsm, ax=None, prange=(1, 99)):
     perc = np.percentile(sd.squareform(dsm), prange)
     h = ax.pcolor(dsm, vmin=perc[0], vmax=perc[1])
     ax.set_aspect(1)
+    ax.invert_yaxis()
     return h
 
 
