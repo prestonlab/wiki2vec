@@ -9,5 +9,4 @@ See the [tutorial](https://github.com/prestonlab/wiki2vec/wiki/wiki2vec-Tutorial
 
 If you use wiki2vec, please cite the following paper:
 
-Morton, NW*, Zippi, EL*, Noh, S, Preston, AR. In revision. Semantic knowledge of famous people and places is represented in distinct networks that converge in hippocampus.
-* authors contributed equally
+Morton, NW*, Zippi, EL*, Noh, S, Preston, AR. In revision. Semantic knowledge of famous people and places is represented in distinct networks that converge in hippocampus. * authors contributed equally
