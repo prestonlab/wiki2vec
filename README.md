@@ -3,7 +3,7 @@ Tools for quantifying the semantic similarity of an arbitrary set of meaningful 
 
 ## New repository
 
-There is a new repository for the project: [wikivector](https://github.com/mortonne/wikivector). It currently does not support the original version of wiki2vec, but it does support a similar model, wiki2USE, which performs better in comparisons with behavioral similarity judgments.
+There is a new repository for the project: [wikivector](https://github.com/mortonne/wikivector). It currently does not support the original version of wiki2vec, but it does support a similar model, wiki2USE, which performs better in comparisons with behavioral similarity judgments and is easier to run.
 
 ## Documentation
 
